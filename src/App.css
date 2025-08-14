@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+/* Base styles for the app */
+.app-container {
+  height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Light mode */
+.light {
+  background-color: white;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Dark mode */
+.dark {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Toggle switch container */
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Toggle switch styles */
+.switch-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.switch-input {
+  display: none;
+}
+
+.switch-slider {
+  width: 50px;
+  height: 25px;
+  background-color: pink;
+  border-radius: 25px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.switch-input:checked + .switch-slider {
+  background-color: #4caf50;
+}
+
+.switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: blue;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+
+.switch-input:checked + .switch-slider .switch-knob {
+  left: 26px;
+}
+
+.mode-label {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Content in the center */
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
